@@ -40,7 +40,7 @@ The input consists of two lists of 100,000 galaxy locations: real measured galax
 - **Right Ascension (a)**: in arc minutes
 - **Declination (d)**: in arc minutes
 
-These coordinates should be converted to radians by multiplying with $( \frac{\pi}{10800} )$.
+These coordinates should be converted to radians by multiplying with $\frac{\pi}{10800} $.
 
 ### Objective
 
@@ -56,7 +56,7 @@ These histograms cover angles from 0 to 180 degrees with a bin width of 0.25 deg
 
 To calculate the angle $( \theta_{12} )$ between two points on a sphere, use the formula:
 
-$\theta_{12} = \arccos(\sin(d1)\sin(d2) + \cos(d1)\cos(d2)\cos(a1 - a2)) $
+$$\theta_{12} = \arccos(\sin(d1)\sin(d2) + \cos(d1)\cos(d2)\cos(a1 - a2)) $$
 
 Where:
 - $( a )$ is the right ascension converted to radians
@@ -66,11 +66,11 @@ Where:
 
 The scientific measure to determine differences between the distributions is:
 
-$[ w_i(\theta) = \frac{DD_i - 2DR_i + RR_i}{RR_i} ]$
+$$ w_i(\theta) = \frac{DD_i - 2DR_i + RR_i}{RR_i} $$
 
-Where $( DDi, DRi, RRi )$ are the values in histogram bin $( i )$.
+Where $DDi, DRi, RRi$ are the values in histogram bin $i$.
 
-If $( w_i )$ values are close to zero (in the range [-0.5, 0.5]), the distribution of real galaxies is approximately random. If $(w_i)$ values are significantly different from zero, the distribution is non-random.
+If $w_i$ values are close to zero (in the range [-0.5, 0.5]), the distribution of real galaxies is approximately random. If $w_i$ values are significantly different from zero, the distribution is non-random.
 
 ## Implementation Details
 
